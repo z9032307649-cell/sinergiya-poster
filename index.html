@@ -16,6 +16,12 @@
   @media print {
     html, body { margin:0 !important; padding:0 !important; }
     .poster { box-shadow:none !important; }
+    /* fallback для PDF-движков, не понимающих gradient text */
+    .title, .title .plus, .slogan-main, .date-line, .when-where .date-num {
+      background: none !important;
+      -webkit-text-fill-color: #e3c068 !important;
+      color: #e3c068 !important;
+    }
   }
 
   /* A2 portrait at ~150dpi = 1240 x 1754 */
