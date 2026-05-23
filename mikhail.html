@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Михаил Алмазов · СИНЕРГИЯ+ · 16 июня</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Cinzel:wght@400;500;600;700&family=Manrope:wght@300;400;500;600&display=swap');
+
+  @page { size: 1080px 1920px; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background:#070410; }
+
+  .card {
+    width: 1080px;
+    height: 1920px;
+    position: relative;
+    overflow: hidden;
+    color:#f3e9c7;
+    font-family:'Manrope', sans-serif;
+    background:
+      radial-gradient(ellipse 800px 600px at 30% 10%, rgba(140,40,70,.4), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 70% 90%, rgba(200,140,40,.25), transparent 60%),
+      radial-gradient(ellipse 900px 700px at 50% 50%, rgba(70,20,50,.5), transparent 70%),
+      linear-gradient(180deg, #1a0612 0%, #2a0e1a 50%, #0a040a 100%);
+  }
+
+  .stars {
+    position:absolute; inset:0; pointer-events:none;
+    background-image:
+      radial-gradient(1px 1px at 10% 8%, #fff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 28% 18%, #ffe9a8 50%, transparent 51%),
+      radial-gradient(1px 1px at 52% 6%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 78% 14%, #fff 50%, transparent 51%),
+      radial-gradient(2px 2px at 92% 22%, #ffe9a8 50%, transparent 51%),
+      radial-gradient(1px 1px at 8% 88%, #fff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 35% 94%, #ffe9a8 50%, transparent 51%),
+      radial-gradient(1px 1px at 88% 86%, #fff 50%, transparent 51%);
+    opacity:.6;
+  }
+
+  .border-outer {
+    position:absolute; inset:30px;
+    border:1px solid rgba(200,162,74,.45);
+    pointer-events:none; z-index:5;
+  }
+  .border-inner {
+    position:absolute; inset:42px;
+    border:1px solid rgba(200,162,74,.15);
+    pointer-events:none; z-index:5;
+  }
+  .co { position:absolute; width:50px; height:50px; border:2px solid #c8a24a; z-index:6; }
+  .co.tl { top:18px; left:18px; border-right:none; border-bottom:none; }
+  .co.tr { top:18px; right:18px; border-left:none; border-bottom:none; }
+  .co.bl { bottom:18px; left:18px; border-right:none; border-top:none; }
+  .co.br { bottom:18px; right:18px; border-left:none; border-top:none; }
+
+  .content { position:absolute; inset:0; z-index:10; padding:120px 80px 80px; display:flex; flex-direction:column; align-items:center; }
+
+  .topbar {
+    text-align:center;
+    letter-spacing:.5em;
+    font-family:'Cinzel', serif;
+    font-size:14px; font-weight:500;
+    color:#c8a24a;
+    margin-bottom:30px;
+  }
+  .topbar::before, .topbar::after{
+    content:""; display:inline-block; width:60px; height:1px;
+    background:linear-gradient(90deg, transparent, #c8a24a, transparent);
+    vertical-align:middle; margin:0 18px;
+  }
+
+  .club-name {
+    font-family:'Cormorant Garamond', serif;
+    font-size:64px; font-weight:600; line-height:1;
+    color:#e3c068;
+    letter-spacing:.04em;
+    text-align:center;
+  }
+  .club-name .plus { font-weight:300; margin-left:4px; }
+
+  .club-tagline {
+    margin-top:12px;
+    font-family:'Cinzel', serif;
+    font-size:14px;
+    letter-spacing:.5em;
+    text-transform:uppercase;
+    color:#cdb986;
+    text-align:center;
+  }
+
+  .arch {
+    width:600px; height:740px;
+    margin:60px auto 0;
+    position:relative;
+    border-radius:300px 300px 14px 14px;
+    background:#140929;
+    overflow:hidden;
+    box-shadow:
+      0 0 0 3px #c8a24a,
+      0 0 0 6px #070410,
+      0 0 0 8px rgba(200,162,74,.4),
+      0 30px 80px rgba(0,0,0,.7);
+  }
+  .arch::before {
+    content:""; position:absolute; inset:0;
+    background: radial-gradient(ellipse at 50% 10%, rgba(255,220,140,.2), transparent 65%);
+    pointer-events:none; z-index:2;
+  }
+  .arch::after {
+    content:""; position:absolute; inset:0;
+    background: linear-gradient(180deg, transparent 65%, rgba(7,4,16,.55) 100%);
+    pointer-events:none; z-index:2;
+  }
+  .arch img {
+    width:100%; height:100%; object-fit:cover; display:block;
+    filter: contrast(1.05) saturate(.95);
+  }
+
+  .name {
+    margin-top:50px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:88px; font-weight:600; line-height:1;
+    color:#fff6d3;
+    letter-spacing:.03em;
+    text-align:center;
+  }
+
+  .role {
+    margin-top:18px;
+    font-family:'Cinzel', serif;
+    font-size:20px; font-weight:500;
+    letter-spacing:.42em;
+    text-transform:uppercase;
+    color:#c8a24a;
+    text-align:center;
+    line-height:1.5;
+  }
+
+  .divider {
+    margin:34px auto 0;
+    display:flex; align-items:center; justify-content:center;
+    gap:14px;
+    color:#c8a24a; font-size:14px; letter-spacing:.6em;
+  }
+  .divider::before, .divider::after {
+    content:""; width:140px; height:1px;
+    background:linear-gradient(90deg, transparent, #c8a24a, transparent);
+  }
+
+  .credo {
+    margin-top:32px;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:30px;
+    line-height:1.4;
+    color:#e7d8a3;
+    text-align:center;
+    max-width:840px;
+  }
+
+  .footer {
+    position:absolute; left:80px; right:80px; bottom:110px;
+    display:flex; justify-content:space-between; align-items:flex-end;
+  }
+  .date-block {
+    text-align:left;
+  }
+  .date-line {
+    font-family:'Cormorant Garamond', serif;
+    font-size:48px; font-weight:600; line-height:1.05;
+    color:#e3c068;
+    letter-spacing:.02em;
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+  }
+  .date-time {
+    margin-top:4px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:48px; font-weight:600; line-height:1.05;
+    color:#fff6d3;
+    letter-spacing:.02em;
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+  }
+  .place {
+    text-align:right;
+  }
+  .place-name {
+    font-family:'Cormorant Garamond', serif;
+    font-size:30px; font-weight:600;
+    color:#fff6d3;
+    line-height:1.1;
+  }
+  .place-addr {
+    margin-top:6px;
+    font-size:18px;
+    color:#cdb986;
+    font-weight:300;
+  }
+
+  @media print {
+    .club-name, .name, .date-line {
+      background: none !important;
+      -webkit-text-fill-color: #e3c068 !important;
+      color: #e3c068 !important;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="stars"></div>
+  <div class="border-outer"></div>
+  <div class="border-inner"></div>
+  <div class="co tl"></div><div class="co tr"></div><div class="co bl"></div><div class="co br"></div>
+
+  <div class="content">
+    <div class="topbar">МОСКВА · ВЕЧЕР ТАЙН</div>
+    <div class="club-name">СИНЕРГИЯ<span class="plus">+</span></div>
+    <div class="club-tagline">астрология · ясновидение · судьба</div>
+
+    <div class="arch">
+      <img src="img/almazov.jpg" alt="Михаил Алмазов">
+    </div>
+
+    <div class="name">Михаил Алмазов</div>
+    <div class="role">ясновидящий · медиум · хиромант</div>
+
+    <div class="divider">◆ &nbsp; ◇ &nbsp; ◆</div>
+    <div class="credo">«Видит то, что вы прячете даже от себя»</div>
+  </div>
+
+  <div class="footer">
+    <div class="date-block">
+      <div class="date-line">16 июня</div>
+      <div class="date-time">18:00</div>
+    </div>
+    <div class="place">
+      <div class="place-name">Клуб «Высоцкий»</div>
+      <div class="place-addr">Москва, ул. Высоцкого, д.&nbsp;3</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
