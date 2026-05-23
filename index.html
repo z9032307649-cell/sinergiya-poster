@@ -6,8 +6,17 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Cinzel:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap');
 
+  @page {
+    size: 1240px 1754px;
+    margin: 0;
+  }
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { background:#070410; }
+  @media print {
+    html, body { margin:0 !important; padding:0 !important; }
+    .poster { box-shadow:none !important; }
+  }
 
   /* A2 portrait at ~150dpi = 1240 x 1754 */
   .poster {
