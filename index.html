@@ -68,6 +68,8 @@
     pointer-events:none;
     user-select:none;
     z-index:0;
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "lnum" 1, "tnum" 1;
   }
 
   /* двойная винтажная рамка */
@@ -309,7 +311,9 @@
     background:linear-gradient(180deg, #fffbe6 0%, #e3c068 60%, #a37927 100%);
     -webkit-background-clip:text; background-clip:text;
     -webkit-text-fill-color:transparent;
-    letter-spacing:-.02em;
+    letter-spacing:.01em;
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "lnum" 1, "tnum" 1;
   }
   .when-where .date-side {
     display:flex; flex-direction:column;
