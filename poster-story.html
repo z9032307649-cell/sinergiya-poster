@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>СИНЕРГИЯ+ · Открытие клуба · 16 июня</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Cinzel:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+  @page {
+    size: 1080px 1920px;
+    margin: 0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background:#070410; }
+  @media print {
+    html, body { margin:0 !important; padding:0 !important; }
+    .poster { box-shadow:none !important; }
+    /* fallback для PDF-движков, не понимающих gradient text */
+    .title, .title .plus, .slogan-main, .date-line, .when-where .date-num {
+      background: none !important;
+      -webkit-text-fill-color: #e3c068 !important;
+      color: #e3c068 !important;
+    }
+  }
+
+  /* Story format 9:16 */
+  .poster {
+    width: 1080px;
+    height: 1920px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    color:#f3e9c7;
+    font-family:'Manrope', sans-serif;
+    background:
+      radial-gradient(ellipse 900px 600px at 20% 8%, rgba(140,80,220,.35), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 85% 92%, rgba(210,150,50,.22), transparent 60%),
+      radial-gradient(ellipse 1100px 700px at 50% 55%, rgba(60,30,110,.5), transparent 70%),
+      linear-gradient(180deg, #050310 0%, #160a2e 50%, #07051a 100%);
+  }
+
+  /* зернистая текстура */
+  .grain {
+    position:absolute; inset:0;
+    background-image:
+      radial-gradient(circle at 30% 20%, rgba(255,255,255,.02) 0%, transparent 50%),
+      radial-gradient(circle at 70% 80%, rgba(255,200,100,.02) 0%, transparent 50%);
+    mix-blend-mode: overlay;
+    pointer-events:none;
+  }
+
+  /* звёздное небо */
+  .stars {
+    position:absolute; inset:0; pointer-events:none;
+    background-image:
+      radial-gradient(1px 1px at 8% 12%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 22% 6%, #fff 50%, transparent 51%),
+      radial-gradient(2px 2px at 38% 18%, #ffe9a8 50%, transparent 51%),
+      radial-gradient(1px 1px at 55% 9%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 72% 14%, #fff 50%, transparent 51%),
+      radial-gradient(2px 2px at 88% 7%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 5% 32%, #fff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 95% 28%, #ffe9a8 50%, transparent 51%),
+      radial-gradient(1px 1px at 12% 48%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 92% 52%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 3% 68%, #fff 50%, transparent 51%),
+      radial-gradient(2px 2px at 96% 72%, #fff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 8% 88%, #ffe9a8 50%, transparent 51%),
+      radial-gradient(1px 1px at 90% 90%, #fff 50%, transparent 51%);
+    opacity:.7;
+  }
+
+  /* декоративная фоновая «20» */
+  .ghost-num {
+    position:absolute;
+    bottom:-80px; right:-100px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:760px; font-weight:700;
+    line-height:.8;
+    color:transparent;
+    -webkit-text-stroke: 1.5px rgba(200,162,74,.08);
+    pointer-events:none;
+    user-select:none;
+    z-index:0;
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+  }
+
+  /* двойная винтажная рамка */
+  .border-outer {
+    position:absolute; inset:36px;
+    border:1px solid rgba(200,162,74,.5);
+    pointer-events:none;
+    z-index:5;
+  }
+  .border-inner {
+    position:absolute; inset:46px;
+    border:1px solid rgba(200,162,74,.18);
+    pointer-events:none;
+    z-index:5;
+  }
+  .corner-ornament {
+    position:absolute; width:60px; height:60px;
+    border:2px solid #c8a24a;
+    z-index:6;
+  }
+  .corner-ornament::before {
+    content:""; position:absolute; width:24px; height:24px;
+    border:1px solid #c8a24a;
+  }
+  .co-tl { top:24px; left:24px; border-right:none; border-bottom:none; }
+  .co-tl::before { top:8px; left:8px; border-right:none; border-bottom:none; }
+  .co-tr { top:24px; right:24px; border-left:none; border-bottom:none; }
+  .co-tr::before { top:8px; right:8px; border-left:none; border-bottom:none; }
+  .co-bl { bottom:24px; left:24px; border-right:none; border-top:none; }
+  .co-bl::before { bottom:8px; left:8px; border-right:none; border-top:none; }
+  .co-br { bottom:24px; right:24px; border-left:none; border-top:none; }
+  .co-br::before { bottom:8px; right:8px; border-left:none; border-top:none; }
+
+  .content { position:absolute; inset:0; z-index:10; }
+
+  /* верхняя дата-метка римскими цифрами */
+  .topbar {
+    position:absolute; top:72px; left:0; right:0;
+    text-align:center;
+    letter-spacing:.5em;
+    font-family:'Cinzel', serif;
+    font-size:13px; font-weight:500;
+    color:#c8a24a;
+  }
+  .topbar::before, .topbar::after{
+    content:""; display:inline-block; width:70px; height:1px;
+    background:linear-gradient(90deg, transparent, #c8a24a, transparent);
+    vertical-align:middle; margin:0 22px;
+  }
+
+  /* эмблема — солнце-роза с орбитой */
+  .crest {
+    position:absolute; top:108px; left:50%; transform:translateX(-50%);
+    width:120px; height:120px;
+  }
+  .crest svg { width:100%; height:100%; }
+
+  /* заглавный блок */
+  .headline {
+    position:absolute; top:250px; left:0; right:0; text-align:center;
+  }
+  .invite {
+    font-family:'Cormorant Garamond', serif;
+    font-size:28px; font-weight:400; font-style:italic;
+    color:#cdb986; letter-spacing:.12em;
+  }
+  .invite::before, .invite::after {
+    content:"·"; margin:0 18px; color:#c8a24a;
+  }
+  .title {
+    font-family:'Cormorant Garamond', serif;
+    font-size:128px; font-weight:600; line-height:1;
+    margin-top:20px;
+    background:linear-gradient(180deg, #fffbe6 0%, #f0d180 35%, #c8a24a 70%, #8a6420 100%);
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent;
+    letter-spacing:.03em;
+    text-shadow: 0 0 50px rgba(220,170,60,.18);
+    display:inline-block;
+  }
+  .title .plus {
+    font-family:'Cormorant Garamond', serif;
+    font-size:128px; font-weight:300;
+    vertical-align:baseline; margin-left:6px;
+    -webkit-text-fill-color:#e3c068;
+  }
+  .subtitle {
+    margin-top:22px;
+    font-family:'Cinzel', serif;
+    font-size:18px; font-weight:500;
+    letter-spacing:.5em;
+    text-transform:uppercase;
+    color:#d9c382;
+  }
+  .tagline {
+    margin-top:24px;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:24px;
+    color:#cdb986;
+    letter-spacing:.04em;
+  }
+
+  /* портреты в арках */
+  .heroes {
+    position:absolute; top:600px; left:50px; right:50px;
+    display:flex; justify-content:space-between; gap:30px;
+  }
+  .hero { width:475px; text-align:center; }
+  .arch {
+    width:380px; height:440px; margin:0 auto;
+    position:relative;
+    border-radius:190px 190px 12px 12px;
+    background:#140929;
+    overflow:hidden;
+    box-shadow:
+      0 0 0 2px #c8a24a,
+      0 0 0 4px #070410,
+      0 0 0 5px rgba(200,162,74,.4),
+      0 30px 80px rgba(0,0,0,.7);
+  }
+  .arch::before {
+    content:""; position:absolute; inset:0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(255,220,140,.25), transparent 60%);
+    pointer-events:none; z-index:2;
+  }
+  .arch::after {
+    content:""; position:absolute; inset:0;
+    background: linear-gradient(180deg, transparent 60%, rgba(7,4,16,.5) 100%);
+    pointer-events:none; z-index:2;
+  }
+  .arch img {
+    width:100%; height:100%; object-fit:cover; display:block;
+    filter: contrast(1.05) saturate(.92) brightness(.96);
+  }
+  .arch .placeholder {
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    color:#86703a; font-family:'Cormorant Garamond',serif;
+    font-style:italic; font-size:20px; text-align:center; padding:30px;
+  }
+  .arch-keystone { display:none; }
+
+  .hero-name {
+    margin-top:26px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:38px; font-weight:600;
+    color:#fff6d3;
+    letter-spacing:.04em;
+    line-height:1;
+  }
+  .hero-role {
+    margin-top:12px;
+    font-family:'Cinzel', serif;
+    font-size:13px; font-weight:500;
+    letter-spacing:.4em;
+    text-transform:uppercase;
+    color:#c8a24a;
+    line-height:1.6;
+  }
+  .hero-bio {
+    margin:18px auto 0; max-width:420px;
+    font-size:16px; line-height:1.55;
+    color:#e7d8a3;
+    font-weight:300;
+    list-style:none;
+    text-align:left;
+  }
+  .hero-bio li {
+    padding-left:22px; position:relative;
+    margin-bottom:4px;
+  }
+  .hero-bio li::before {
+    content:"◆";
+    position:absolute; left:0; top:2px;
+    color:#c8a24a; font-size:11px;
+  }
+  .hero-bio b { color:#fff6d3; font-weight:500; }
+
+  /* СЛОГАН-БАННЕР на всю ширину между героями и футером */
+  .slogan-band {
+    position:absolute;
+    left:140px; right:140px;
+    top:1470px;
+    text-align:center;
+    padding:18px 0;
+    border-top:1px solid rgba(200,162,74,.4);
+    border-bottom:1px solid rgba(200,162,74,.4);
+  }
+  .slogan-band::before, .slogan-band::after {
+    content:"";
+    position:absolute; left:50%; transform:translateX(-50%);
+    width:14px; height:14px;
+    background:#c8a24a;
+    rotate:45deg;
+    border:2px solid #070410;
+    box-shadow: 0 0 0 1px #c8a24a;
+  }
+  .slogan-band::before { top:-8px; }
+  .slogan-band::after { bottom:-8px; }
+  .slogan-main {
+    font-family:'Cormorant Garamond', serif;
+    font-size:34px; font-weight:600;
+    background:linear-gradient(180deg, #fffbe6 0%, #f0d180 50%, #c8a24a 100%);
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent;
+    letter-spacing:.02em;
+    line-height:1.1;
+  }
+  .slogan-diamonds {
+    margin:8px 0;
+    color:#c8a24a;
+    font-size:11px;
+    letter-spacing:.8em;
+  }
+  .slogan-sub {
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:22px; line-height:1.2;
+    color:#e7d8a3;
+    letter-spacing:.02em;
+  }
+
+  /* футер: дата слева, QR справа */
+  .footer {
+    position:absolute; left:70px; right:70px; bottom:90px;
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap:30px;
+  }
+  .when-where {
+    text-align:left;
+  }
+  .when-where .date-line {
+    font-family:'Cormorant Garamond', serif;
+    font-size:54px; font-weight:600; line-height:1.05;
+    background:linear-gradient(180deg, #fffbe6 0%, #e3c068 60%, #a37927 100%);
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent;
+    letter-spacing:.02em;
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+  }
+  .when-where .date-time {
+    margin-top:6px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:54px; font-weight:600; line-height:1.05;
+    color:#fff6d3;
+    letter-spacing:.02em;
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+  }
+  .when-where .place {
+    margin-top:22px;
+    max-width:440px;
+  }
+  .when-where .place-label {
+    font-family:'Cinzel', serif;
+    font-size:11px; letter-spacing:.5em;
+    text-transform:uppercase;
+    color:#c8a24a;
+    margin-bottom:8px;
+  }
+  .when-where .place-name {
+    font-family:'Cormorant Garamond', serif;
+    font-size:26px; font-weight:600;
+    color:#fff6d3;
+    line-height:1.1;
+  }
+  .when-where .place-addr {
+    margin-top:6px;
+    font-size:17px;
+    color:#cdb986;
+    font-weight:300;
+  }
+
+  .qr-wrap {
+    display:flex; flex-direction:column; align-items:center;
+    gap:10px;
+  }
+  .qr {
+    width:180px; height:180px;
+    border:2px solid #c8a24a;
+    border-radius:8px;
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    color:#c8a24a;
+    font-family:'Cinzel', serif;
+    font-size:13px; letter-spacing:.3em; text-transform:uppercase;
+    background:rgba(255,255,255,.02);
+    position:relative;
+  }
+  .qr::before {
+    content:""; position:absolute; inset:8px;
+    border:1px dashed rgba(200,162,74,.4);
+    border-radius:4px;
+  }
+  .qr-label {
+    font-family:'Cinzel', serif;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:.4em;
+    color:#e3c068;
+    margin-top:6px;
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+  <div class="stars"></div>
+  <div class="grain"></div>
+  <div class="ghost-num">16</div>
+
+  <div class="border-outer"></div>
+  <div class="border-inner"></div>
+  <div class="corner-ornament co-tl"></div>
+  <div class="corner-ornament co-tr"></div>
+  <div class="corner-ornament co-bl"></div>
+  <div class="corner-ornament co-br"></div>
+
+  <div class="content">
+    <div class="topbar">МОСКВА · ВЕЧЕР ТАЙН</div>
+
+    <div class="crest">
+      <svg viewBox="0 0 120 120" fill="none">
+        <circle cx="60" cy="60" r="54" stroke="#c8a24a" stroke-width="1"/>
+        <circle cx="60" cy="60" r="44" stroke="#c8a24a" stroke-width=".6" stroke-dasharray="2 5"/>
+        <g stroke="#c8a24a" stroke-width=".8" opacity=".7">
+          <line x1="60" y1="6" x2="60" y2="18"/>
+          <line x1="60" y1="102" x2="60" y2="114"/>
+          <line x1="6" y1="60" x2="18" y2="60"/>
+          <line x1="102" y1="60" x2="114" y2="60"/>
+        </g>
+        <path d="M60 22 L66 56 L98 60 L66 64 L60 98 L54 64 L22 60 L54 56 Z" fill="url(#g1)"/>
+        <circle cx="60" cy="60" r="5" fill="#070410" stroke="#c8a24a" stroke-width=".8"/>
+        <defs>
+          <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#fffbe6"/>
+            <stop offset="60%" stop-color="#e3c068"/>
+            <stop offset="100%" stop-color="#8a6420"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <div class="headline">
+      <div class="invite">приглашаем на открытие клуба</div>
+      <div class="title">СИНЕРГИЯ<span class="plus">+</span></div>
+      <div class="subtitle">астрология · экстрасенсорика · судьба</div>
+      <div class="tagline">«Точнейший планетарный анализ и непревзойдённый дар видения»</div>
+    </div>
+
+    <div class="heroes">
+      <div class="hero">
+        <div class="arch">
+          <div class="arch-keystone"></div>
+          <img src="img/almazov.jpg" alt="Михаил Алмазов" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder" style="display:none">фото: img/almazov.jpg</div>
+        </div>
+        <div class="hero-name">Михаил Алмазов</div>
+        <div class="hero-role">ясновидящий · медиум<br>хиромант</div>
+        <ul class="hero-bio">
+          <li>Личный медиум <b>В.В. Жириновского</b></li>
+          <li>Ученик легендарной <b>Джуны</b></li>
+          <li>Ясновидящий и корректор судьбы</li>
+          <li>Работает с влиятельными лицами, бизнесменами и политиками</li>
+        </ul>
+      </div>
+
+      <div class="hero">
+        <div class="arch">
+          <div class="arch-keystone"></div>
+          <img src="img/lukyanenkov.jpg" alt="Максим Лукьяненков" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="placeholder" style="display:none">фото: img/lukyanenkov.jpg</div>
+        </div>
+        <div class="hero-name">Максим Лукьяненков</div>
+        <div class="hero-role">астролог · нумеролог<br>ведущий вечера</div>
+        <ul class="hero-bio">
+          <li><b>10 лет</b> успешной практики</li>
+          <li>Клиенты по всему миру</li>
+          <li>Западная, восточная и славяноарийская астрология</li>
+          <li>Нумерология и китайская метафизика стихий</li>
+          <li>Делает <b>точнейшие прогнозы до часа</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="slogan-band">
+      <div class="slogan-main">Скучно — не&nbsp;будет.</div>
+      <div class="slogan-diamonds">◆ &nbsp; ◇ &nbsp; ◆</div>
+      <div class="slogan-sub">Результат — не&nbsp;заставит себя ждать.</div>
+    </div>
+
+    <div class="footer">
+      <div class="when-where">
+        <div class="date-line">16 июня</div>
+        <div class="date-time">18:00</div>
+        <div class="place">
+          <div class="place-label">место проведения</div>
+          <div class="place-name">Клуб «Высоцкий»</div>
+          <div class="place-addr">Москва, ул. Высоцкого, д.&nbsp;3</div>
+        </div>
+      </div>
+
+      <div class="qr-wrap">
+        <div class="qr">QR<br>билеты</div>
+        <div class="qr-label">КУПИ БИЛЕТ</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
