@@ -302,36 +302,24 @@
   .when-where {
     text-align:left;
   }
-  .when-where .date-wrap {
-    display:flex; align-items:baseline; gap:18px;
-  }
-  .when-where .date-num {
+  .when-where .date-line {
     font-family:'Cormorant Garamond', serif;
-    font-size:100px; font-weight:700; line-height:.85;
+    font-size:54px; font-weight:600; line-height:1.05;
     background:linear-gradient(180deg, #fffbe6 0%, #e3c068 60%, #a37927 100%);
     -webkit-background-clip:text; background-clip:text;
     -webkit-text-fill-color:transparent;
-    letter-spacing:.01em;
+    letter-spacing:.02em;
     font-variant-numeric: lining-nums;
     font-feature-settings: "lnum" 1, "tnum" 1;
   }
-  .when-where .date-side {
-    display:flex; flex-direction:column;
-    padding-bottom:14px;
-  }
-  .when-where .date-month {
-    font-family:'Cormorant Garamond', serif;
-    font-size:32px; font-weight:500;
-    color:#e3c068;
-    line-height:1;
-    letter-spacing:.04em;
-  }
   .when-where .date-time {
-    margin-top:10px;
-    font-family:'Cinzel', serif;
-    font-size:20px; font-weight:600;
-    letter-spacing:.3em;
+    margin-top:6px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:54px; font-weight:600; line-height:1.05;
     color:#fff6d3;
+    letter-spacing:.02em;
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "lnum" 1, "tnum" 1;
   }
   .when-where .place {
     margin-top:22px;
@@ -476,13 +464,8 @@
 
     <div class="footer">
       <div class="when-where">
-        <div class="date-wrap">
-          <div class="date-num">16</div>
-          <div class="date-side">
-            <div class="date-month">июня</div>
-            <div class="date-time">18:00</div>
-          </div>
-        </div>
+        <div class="date-line">16 июня</div>
+        <div class="date-time">18:00</div>
         <div class="place">
           <div class="place-label">место проведения</div>
           <div class="place-name">Клуб «Высоцкий»</div>
