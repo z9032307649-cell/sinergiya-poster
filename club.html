@@ -352,6 +352,185 @@
     cursor:pointer;
   }
 
+  /* ---------- SECTION: ABOUT ---------- */
+  .about {
+    position:relative;
+    padding: 140px 60px 160px;
+    background:
+      radial-gradient(ellipse 1100px 700px at 50% 30%, rgba(60,30,110,.35), transparent 70%),
+      linear-gradient(180deg, #07051a 0%, #0d0820 50%, #07051a 100%);
+    overflow:hidden;
+  }
+  .about::before {
+    content:""; position:absolute; inset:0;
+    background-image:
+      radial-gradient(1px 1px at 15% 25%, #fff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 75% 15%, #ffe9a8 50%, transparent 51%),
+      radial-gradient(1px 1px at 50% 55%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 88% 80%, #fff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 10% 88%, #ffe9a8 50%, transparent 51%);
+    opacity:.4;
+    pointer-events:none;
+  }
+  .about-inner {
+    position:relative; z-index:2;
+    max-width:1200px; margin:0 auto;
+  }
+  .section-label {
+    text-align:center;
+    font-family:'Cinzel', serif;
+    font-size:12px; font-weight:500;
+    letter-spacing:.5em;
+    text-transform:uppercase;
+    color:#c8a24a;
+  }
+  .section-label::before, .section-label::after {
+    content:""; display:inline-block;
+    width:70px; height:1px;
+    background:linear-gradient(90deg, transparent, #c8a24a, transparent);
+    vertical-align:middle; margin:0 22px;
+  }
+  .section-title {
+    margin-top:22px;
+    text-align:center;
+    font-family:'Cormorant Garamond', serif;
+    font-size: clamp(48px, 5.5vw, 84px);
+    font-weight:600;
+    line-height:1.05;
+    background:linear-gradient(180deg, #fffbe6 0%, #e3c068 60%, #a37927 100%);
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent;
+    letter-spacing:.02em;
+  }
+
+  .manifest {
+    margin: 60px auto 0;
+    max-width:880px;
+  }
+  .manifest p {
+    font-family:'Manrope', sans-serif;
+    font-size: clamp(17px, 1.4vw, 21px);
+    font-weight:300;
+    line-height:1.75;
+    color:#e7d8a3;
+    margin-bottom:24px;
+    text-align:center;
+  }
+  .manifest p.lead {
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size: clamp(22px, 2vw, 30px);
+    line-height:1.45;
+    color:#fff6d3;
+    margin-bottom:32px;
+  }
+  .manifest .gold-word {
+    color:#e3c068;
+    font-weight:500;
+  }
+  .manifest .plus-sign {
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size:1.15em;
+    color:#e3c068;
+  }
+
+  .features {
+    margin-top:100px;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:32px;
+  }
+  .feature {
+    text-align:center;
+    padding:36px 24px;
+    border:1px solid rgba(200,162,74,.18);
+    border-radius:4px;
+    background:rgba(20,9,41,.35);
+    transition: all .35s ease;
+  }
+  .feature:hover {
+    border-color:rgba(200,162,74,.5);
+    background:rgba(20,9,41,.55);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,.4), 0 0 30px rgba(200,162,74,.12);
+  }
+  .feature-icon {
+    width:54px; height:54px;
+    margin:0 auto 22px;
+    display:flex; align-items:center; justify-content:center;
+    border:1px solid #c8a24a;
+    border-radius:50%;
+    color:#e3c068;
+    font-size:22px;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+  }
+  .feature-title {
+    font-family:'Cormorant Garamond', serif;
+    font-size:24px; font-weight:600;
+    color:#fff6d3;
+    line-height:1.2;
+    letter-spacing:.02em;
+  }
+  .feature-text {
+    margin-top:14px;
+    font-size:15px;
+    line-height:1.6;
+    color:#cdb986;
+    font-weight:300;
+  }
+
+  .audience {
+    margin-top:120px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:40px;
+    max-width:1000px;
+    margin-left:auto; margin-right:auto;
+  }
+  .audience-block {
+    padding:36px 32px;
+    border:1px solid rgba(200,162,74,.25);
+    border-radius:4px;
+    background:rgba(15,7,30,.4);
+  }
+  .audience-block.no {
+    border-color:rgba(180,90,90,.25);
+    background:rgba(20,8,12,.4);
+  }
+  .audience-title {
+    font-family:'Cinzel', serif;
+    font-size:13px; font-weight:600;
+    letter-spacing:.4em;
+    text-transform:uppercase;
+    color:#e3c068;
+    margin-bottom:22px;
+    text-align:center;
+  }
+  .audience-block.no .audience-title { color:#c88a8a; }
+  .audience-list { list-style:none; }
+  .audience-list li {
+    padding:10px 0 10px 30px;
+    font-size:16px; line-height:1.5;
+    color:#e7d8a3;
+    font-weight:300;
+    position:relative;
+    border-bottom:1px solid rgba(200,162,74,.08);
+  }
+  .audience-list li:last-child { border-bottom:none; }
+  .audience-list li::before {
+    content:"◆";
+    position:absolute; left:0; top:11px;
+    color:#c8a24a; font-size:11px;
+  }
+  .audience-block.no .audience-list li::before {
+    content:"×";
+    color:#c88a8a;
+    font-size:18px;
+    top:8px;
+  }
+
   /* ---------- ADAPTIVE ---------- */
   @media (max-width: 1024px) {
     .navbar { padding:16px 24px; }
@@ -392,6 +571,21 @@
     .emblem { width:64px; height:64px; margin-bottom:20px; }
     .nav-logo { font-size:22px; }
     .burger { font-size:28px; }
+  }
+
+  @media (max-width: 1024px) {
+    .about { padding: 90px 24px 100px; }
+    .features { grid-template-columns: 1fr 1fr; gap:18px; margin-top:70px; }
+    .audience { grid-template-columns: 1fr; margin-top:80px; gap:24px; }
+    .manifest { margin-top:40px; }
+    .manifest p.lead { font-size:22px; }
+    .manifest p { font-size:17px; }
+  }
+  @media (max-width: 600px) {
+    .features { grid-template-columns: 1fr; gap:16px; }
+    .feature { padding:28px 22px; }
+    .section-label::before, .section-label::after { width:35px; margin:0 12px; }
+    .audience-block { padding:28px 22px; }
   }
 </style>
 </head>
@@ -471,6 +665,99 @@
   </a>
 
   <div class="scroll-hint">прокрутите вниз</div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="section-label">о клубе</div>
+    <h2 class="section-title">Зачем мы создали<br>«Синергию<span style="color:#e3c068">+</span>»</h2>
+
+    <div class="manifest">
+      <p class="lead">
+        Когда тревожно. Когда выбор сложен. Когда привычные ответы уже не работают —
+        человек идёт за прогнозом.
+      </p>
+      <p>
+        И часто получает его. Но прогноз сам по себе не выводит из тупика —
+        он только подтверждает: впереди туман. А что делать с этим туманом — каждый
+        додумывает сам. И тревога только усиливается.
+      </p>
+      <p>
+        Мы делаем иначе. <span class="gold-word">«Синергия+»</span> — закрытый клуб,
+        где собрались мастера, к которым годами идёт очередь из политиков,
+        бизнесменов и тех, кто привык получать результат. На каждом вечере —
+        несколько направлений в одном зале: астрология, ясновидение, нумерология,
+        хиромантия. Один ваш вопрос — несколько углов зрения, несколько проверок,
+        один общий ответ.
+      </p>
+      <p>
+        Вы уходите не только с прогнозом — что будет. Вы уходите с пошаговым
+        планом: что делать сейчас, что — через неделю, что — через месяц.
+        И почему именно так.
+      </p>
+      <p class="lead" style="margin-top:36px;">
+        Этот знак <span class="plus-sign">«+»</span> — то, что мы добавляем
+        к обычной эзотерике. Это разница между «вам предсказали» и «вы знаете,
+        что делать».
+      </p>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">◆</div>
+        <div class="feature-title">Только проверенные мастера</div>
+        <div class="feature-text">
+          Не из Интернета. Не из ТНТ. Из закрытого круга. Каждого мастера
+          мы знаем лично — и лично рекомендуем.
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">✦</div>
+        <div class="feature-title">Несколько направлений за один вечер</div>
+        <div class="feature-text">
+          Астрология, ясновидение, нумерология, хиромантия. Один ваш вопрос —
+          несколько проверок, объёмный ответ.
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">→</div>
+        <div class="feature-title">Ответ и пошаговый план</div>
+        <div class="feature-text">
+          Не просто «что будет», а «что делать»: с чего начать,
+          что — через неделю, что — через месяц.
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">◇</div>
+        <div class="feature-title">Камерно и лично</div>
+        <div class="feature-text">
+          100 мест в зале. Не шоу. Не лекция. Каждый мастер работает
+          с каждым гостем индивидуально.
+        </div>
+      </div>
+    </div>
+
+    <div class="audience">
+      <div class="audience-block yes">
+        <div class="audience-title">Для кого этот клуб</div>
+        <ul class="audience-list">
+          <li>Тех, кто стоит перед важным выбором и хочет ясности</li>
+          <li>Тех, кто устал от общих фраз и предсказаний наугад</li>
+          <li>Тех, кто привык работать с лучшими в своей области</li>
+          <li>Тех, для кого важна камерность и личное внимание</li>
+        </ul>
+      </div>
+      <div class="audience-block no">
+        <div class="audience-title">Кому пока не сюда</div>
+        <ul class="audience-list">
+          <li>Тем, кто ищет цирковое шоу или развлечение</li>
+          <li>Тем, кто пришёл с одним «давайте посмотрим»</li>
+          <li>Тем, кто не готов услышать честный ответ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
 </body>
