@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>СИНЕРГИЯ+ · Закрытый клуб</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Cinzel:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background:#070410;
+    color:#f3e9c7;
+    font-family:'Manrope', sans-serif;
+    overflow-x:hidden;
+  }
+
+  /* ---------- HERO SECTION ---------- */
+  .hero {
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse 900px 700px at 20% 10%, rgba(140,70,200,.32), transparent 60%),
+      radial-gradient(ellipse 800px 600px at 85% 90%, rgba(200,140,40,.22), transparent 60%),
+      radial-gradient(ellipse 1200px 900px at 50% 55%, rgba(50,20,90,.55), transparent 70%),
+      linear-gradient(180deg, #050310 0%, #160a2e 50%, #07051a 100%);
+    display:flex; flex-direction:column;
+  }
+
+  .stars {
+    position:absolute; inset:0; pointer-events:none;
+    background-image:
+      radial-gradient(1px 1px at 8% 12%, #fff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 22% 6%, #ffe9a8 50%, transparent 51%),
+      radial-gradient(1px 1px at 38% 18%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 55% 9%, #fff 50%, transparent 51%),
+      radial-gradient(2px 2px at 72% 14%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 88% 7%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 5% 32%, #fff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 95% 28%, #ffe9a8 50%, transparent 51%),
+      radial-gradient(1px 1px at 12% 48%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 92% 52%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 3% 68%, #fff 50%, transparent 51%),
+      radial-gradient(2px 2px at 96% 72%, #fff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 8% 88%, #ffe9a8 50%, transparent 51%),
+      radial-gradient(1px 1px at 90% 90%, #fff 50%, transparent 51%);
+    opacity:.6;
+    animation: twinkle 8s ease-in-out infinite;
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity:.55; }
+    50% { opacity:.8; }
+  }
+
+  /* ---------- NAVBAR ---------- */
+  .navbar {
+    position:fixed; top:0; left:0; right:0;
+    z-index:100;
+    padding:22px 56px;
+    display:flex; align-items:center; justify-content:space-between;
+    background:rgba(7,4,16,.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom:1px solid rgba(200,162,74,.18);
+    transition: all .3s ease;
+  }
+  .nav-logo {
+    font-family:'Cormorant Garamond', serif;
+    font-size:28px; font-weight:600;
+    color:#e3c068;
+    letter-spacing:.05em;
+    text-decoration:none;
+  }
+  .nav-logo .plus {
+    color:#fff6d3;
+    margin-left:2px;
+  }
+  .nav-menu {
+    display:flex; gap:36px;
+    list-style:none;
+  }
+  .nav-menu a {
+    font-family:'Cinzel', serif;
+    font-size:12px; font-weight:500;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:#cdb986;
+    text-decoration:none;
+    position:relative;
+    padding:6px 0;
+    transition: color .25s ease;
+  }
+  .nav-menu a::after {
+    content:""; position:absolute;
+    left:0; bottom:0; height:1px; width:0;
+    background:#e3c068;
+    transition: width .3s ease;
+  }
+  .nav-menu a:hover { color:#fff6d3; }
+  .nav-menu a:hover::after { width:100%; }
+
+  .nav-cta {
+    font-family:'Cinzel', serif;
+    font-size:12px; font-weight:600;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:#070410;
+    background:linear-gradient(180deg, #fffbe6 0%, #e3c068 50%, #a37927 100%);
+    padding:12px 22px;
+    border-radius:2px;
+    text-decoration:none;
+    transition: all .3s ease;
+    box-shadow: 0 4px 20px rgba(200,162,74,.2);
+  }
+  .nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(200,162,74,.4);
+  }
+
+  .burger {
+    display:none;
+    background:none; border:none;
+    color:#e3c068;
+    font-size:32px;
+    cursor:pointer;
+    padding:0;
+  }
+
+  /* ---------- HERO CONTENT ---------- */
+  .hero-content {
+    position:relative; z-index:5;
+    margin: auto;
+    padding: 140px 60px 80px;
+    text-align:center;
+    max-width:1200px;
+    width:100%;
+  }
+
+  .emblem {
+    width:90px; height:90px;
+    margin:0 auto 28px;
+    animation: spin 90s linear infinite;
+  }
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .emblem svg { width:100%; height:100%; }
+
+  .hero-title {
+    font-family:'Cormorant Garamond', serif;
+    font-size: clamp(80px, 14vw, 200px);
+    font-weight:700;
+    line-height:.95;
+    letter-spacing:.03em;
+    background:linear-gradient(180deg, #fffbe6 0%, #f0d180 35%, #c8a24a 70%, #8a6420 100%);
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent;
+    text-shadow: 0 0 60px rgba(220,170,60,.2);
+  }
+  .hero-title .plus {
+    font-weight:300;
+    margin-left:8px;
+    -webkit-text-fill-color:#e3c068;
+  }
+
+  .hero-subtitle {
+    margin-top:24px;
+    font-family:'Cinzel', serif;
+    font-size: clamp(13px, 1.1vw, 17px);
+    font-weight:500;
+    letter-spacing:.5em;
+    text-transform:uppercase;
+    color:#d9c382;
+  }
+
+  .hero-promise {
+    margin-top:60px;
+    font-family:'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4.4vw, 64px);
+    font-weight:500;
+    font-style:italic;
+    line-height:1.2;
+    color:#fff6d3;
+    letter-spacing:.01em;
+  }
+  .hero-promise .gold {
+    font-style:normal;
+    font-weight:600;
+    background:linear-gradient(180deg, #fffbe6 0%, #e3c068 100%);
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+
+  .hero-tag {
+    margin: 36px auto 0;
+    max-width:760px;
+    font-family:'Manrope', sans-serif;
+    font-size: clamp(15px, 1.2vw, 19px);
+    font-weight:300;
+    line-height:1.7;
+    color:#cdb986;
+  }
+
+  .hero-buttons {
+    margin-top:50px;
+    display:flex; gap:20px; justify-content:center; flex-wrap:wrap;
+  }
+  .btn-primary, .btn-secondary {
+    font-family:'Cinzel', serif;
+    font-size:13px; font-weight:600;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    padding:18px 42px;
+    text-decoration:none;
+    border-radius:2px;
+    transition: all .3s ease;
+    cursor:pointer;
+    display:inline-block;
+  }
+  .btn-primary {
+    color:#070410;
+    background:linear-gradient(180deg, #fffbe6 0%, #e3c068 50%, #a37927 100%);
+    box-shadow: 0 4px 30px rgba(200,162,74,.3);
+    animation: pulse 3s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 30px rgba(200,162,74,.3); }
+    50%      { box-shadow: 0 4px 50px rgba(200,162,74,.55); }
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 50px rgba(200,162,74,.6);
+  }
+  .btn-secondary {
+    color:#e3c068;
+    background:transparent;
+    border:1px solid #c8a24a;
+  }
+  .btn-secondary:hover {
+    background:rgba(200,162,74,.1);
+    color:#fff6d3;
+    transform: translateY(-2px);
+  }
+
+  /* ---------- NEXT EVENT CARD ---------- */
+  .next-event {
+    position:absolute;
+    bottom:50px; right:56px;
+    z-index:6;
+    padding:22px 28px;
+    background:rgba(20,9,41,.7);
+    backdrop-filter: blur(10px);
+    border:1px solid rgba(200,162,74,.4);
+    border-radius:4px;
+    text-decoration:none;
+    color:#f3e9c7;
+    transition: all .35s ease;
+    max-width:340px;
+  }
+  .next-event:hover {
+    transform: translateY(-4px);
+    border-color:#e3c068;
+    box-shadow: 0 15px 40px rgba(0,0,0,.5), 0 0 30px rgba(200,162,74,.25);
+  }
+  .next-event-label {
+    font-family:'Cinzel', serif;
+    font-size:10px; font-weight:600;
+    letter-spacing:.4em;
+    text-transform:uppercase;
+    color:#c8a24a;
+  }
+  .next-event-label::before, .next-event-label::after {
+    content:"◆"; margin:0 6px; font-size:7px; vertical-align:2px;
+  }
+  .next-event-date {
+    margin-top:8px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:24px; font-weight:600;
+    color:#fff6d3;
+  }
+  .next-event-info {
+    margin-top:4px;
+    font-size:13px; color:#cdb986; font-weight:300;
+  }
+  .next-event-link {
+    margin-top:10px;
+    font-family:'Cinzel', serif;
+    font-size:10px; letter-spacing:.3em;
+    color:#e3c068;
+    text-transform:uppercase;
+  }
+
+  /* ---------- SCROLL HINT ---------- */
+  .scroll-hint {
+    position:absolute;
+    bottom:24px; left:50%; transform:translateX(-50%);
+    z-index:5;
+    font-family:'Cinzel', serif;
+    font-size:10px;
+    letter-spacing:.4em;
+    color:#c8a24a;
+    text-transform:uppercase;
+    animation: bounce 2.5s ease-in-out infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translate(-50%, 0); opacity:.7; }
+    50%      { transform: translate(-50%, 8px); opacity:1; }
+  }
+  .scroll-hint::after {
+    content:""; display:block;
+    width:1px; height:30px; margin:8px auto 0;
+    background:linear-gradient(180deg, #c8a24a, transparent);
+  }
+
+  /* ---------- MOBILE MENU ---------- */
+  .mobile-menu {
+    position:fixed; inset:0;
+    z-index:200;
+    background:rgba(7,4,16,.97);
+    backdrop-filter: blur(20px);
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    gap:32px;
+    opacity:0; pointer-events:none;
+    transition: opacity .4s ease;
+  }
+  .mobile-menu.open { opacity:1; pointer-events:auto; }
+  .mobile-menu a {
+    font-family:'Cormorant Garamond', serif;
+    font-size:34px; font-weight:500;
+    color:#e3c068;
+    text-decoration:none;
+    letter-spacing:.05em;
+    opacity:0;
+    transform:translateY(15px);
+    transition: all .4s ease;
+  }
+  .mobile-menu.open a {
+    opacity:1; transform:translateY(0);
+  }
+  .mobile-menu.open a:nth-child(1) { transition-delay: .15s; }
+  .mobile-menu.open a:nth-child(2) { transition-delay: .22s; }
+  .mobile-menu.open a:nth-child(3) { transition-delay: .29s; }
+  .mobile-menu.open a:nth-child(4) { transition-delay: .36s; }
+  .mobile-menu.open a:nth-child(5) { transition-delay: .43s; }
+  .mobile-menu.open a:nth-child(6) { transition-delay: .50s; }
+  .mobile-menu-close {
+    position:absolute; top:24px; right:28px;
+    background:none; border:none;
+    color:#e3c068; font-size:38px;
+    cursor:pointer;
+  }
+
+  /* ---------- ADAPTIVE ---------- */
+  @media (max-width: 1024px) {
+    .navbar { padding:16px 24px; }
+    .nav-menu, .nav-cta { display:none; }
+    .burger { display:block; }
+    .hero-content { padding:120px 24px 60px; }
+    .hero-promise { margin-top:40px; }
+    .hero-tag { margin-top:24px; }
+    .hero-buttons { margin-top:34px; flex-direction:column; align-items:stretch; }
+    .btn-primary, .btn-secondary { padding:16px 28px; font-size:12px; }
+    .next-event {
+      position:static;
+      max-width:none;
+      margin:30px auto 60px;
+      width:calc(100% - 48px);
+    }
+    .scroll-hint { display:none; }
+  }
+  @media (max-width: 480px) {
+    .hero-promise br { display:block; }
+    .emblem { width:64px; height:64px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="navbar">
+  <a href="#" class="nav-logo">СИНЕРГИЯ<span class="plus">+</span></a>
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="#about">О клубе</a></li>
+      <li><a href="#directors">Дирекция</a></li>
+      <li><a href="#residents">Резиденты</a></li>
+      <li><a href="#events">Мероприятия</a></li>
+      <li><a href="#gallery">Фото отчёты</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+  </nav>
+  <a href="#events" class="nav-cta">Стать гостем</a>
+  <button class="burger" onclick="document.querySelector('.mobile-menu').classList.add('open')" aria-label="Открыть меню">≡</button>
+</header>
+
+<div class="mobile-menu">
+  <button class="mobile-menu-close" onclick="document.querySelector('.mobile-menu').classList.remove('open')" aria-label="Закрыть меню">×</button>
+  <a href="#about" onclick="document.querySelector('.mobile-menu').classList.remove('open')">О клубе</a>
+  <a href="#directors" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Дирекция</a>
+  <a href="#residents" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Резиденты</a>
+  <a href="#events" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Мероприятия</a>
+  <a href="#gallery" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Фото отчёты</a>
+  <a href="#contacts" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Контакты</a>
+</div>
+
+<section class="hero">
+  <div class="stars"></div>
+
+  <div class="hero-content">
+    <div class="emblem">
+      <svg viewBox="0 0 120 120" fill="none">
+        <circle cx="60" cy="60" r="54" stroke="#c8a24a" stroke-width="1"/>
+        <circle cx="60" cy="60" r="44" stroke="#c8a24a" stroke-width=".6" stroke-dasharray="2 5"/>
+        <path d="M60 22 L66 56 L98 60 L66 64 L60 98 L54 64 L22 60 L54 56 Z" fill="url(#g1)"/>
+        <circle cx="60" cy="60" r="5" fill="#070410" stroke="#c8a24a" stroke-width=".8"/>
+        <defs>
+          <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#fffbe6"/>
+            <stop offset="60%" stop-color="#e3c068"/>
+            <stop offset="100%" stop-color="#8a6420"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <h1 class="hero-title">СИНЕРГИЯ<span class="plus">+</span></h1>
+    <p class="hero-subtitle">закрытый клуб · ответы · планы · действия</p>
+
+    <p class="hero-promise">
+      Не только <span class="gold">прогноз</span>.<br>
+      Но и чёткий пошаговый <span class="gold">план</span>.
+    </p>
+
+    <p class="hero-tag">
+      В стремительное и тревожное время прогнозов уже мало.<br>
+      Нужны мастера, которые видят будущее, считают звёзды —<br>
+      и говорят, что делать прямо сейчас.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#about" class="btn-primary">Узнать о клубе</a>
+      <a href="#events" class="btn-secondary">Ближайший вечер →</a>
+    </div>
+  </div>
+
+  <a href="#events" class="next-event">
+    <div class="next-event-label">Ближайший вечер</div>
+    <div class="next-event-date">16 июня · 18:00</div>
+    <div class="next-event-info">Михаил Алмазов · Максим Лукьяненков<br>Москва, клуб «Высоцкий»</div>
+    <div class="next-event-link">подробнее →</div>
+  </a>
+
+  <div class="scroll-hint">прокрутите вниз</div>
+</section>
+
+</body>
+</html>
