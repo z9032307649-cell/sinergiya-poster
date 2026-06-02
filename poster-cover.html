@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>СИНЕРГИЯ+ · Обложка TicketsCloud 1500×900</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Cinzel:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+  @page { size: 1500px 900px; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #07041a; }
+
+  .cover {
+    width: 1500px;
+    height: 900px;
+    position: relative;
+    overflow: hidden;
+    color: #f3e9c7;
+    font-family: 'Manrope', sans-serif;
+    background:
+      radial-gradient(ellipse 900px 600px at 10% 0%,   rgba(130,60,220,.42), transparent 55%),
+      radial-gradient(ellipse 700px 500px at 90% 100%, rgba(200,140,40,.22),  transparent 55%),
+      radial-gradient(ellipse 1200px 700px at 50% 55%, rgba(50,20,100,.6),   transparent 65%),
+      radial-gradient(ellipse 500px 300px at 80% 10%,  rgba(100,50,180,.2),  transparent 50%),
+      linear-gradient(170deg, #060312 0%, #150928 55%, #06051a 100%);
+  }
+
+  /* зерно */
+  .grain {
+    position:absolute; inset:0; pointer-events:none; mix-blend-mode:overlay;
+    background-image:
+      radial-gradient(circle at 30% 20%, rgba(255,255,255,.012) 0%, transparent 50%),
+      radial-gradient(circle at 70% 80%, rgba(255,200,100,.012) 0%, transparent 50%);
+  }
+
+  /* звёзды */
+  .stars {
+    position:absolute; inset:0; pointer-events:none; opacity:.6;
+    background-image:
+      radial-gradient(1px 1px at 4%  7%,  #fff    50%, transparent 51%),
+      radial-gradient(1px 1px at 14% 3%,  #fff    50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 25% 11%, #ffe9a8 50%, transparent 51%),
+      radial-gradient(1px 1px at 40% 5%,  #fff    50%, transparent 51%),
+      radial-gradient(1px 1px at 56% 9%,  #fff    50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 70% 4%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 84% 8%,  #fff    50%, transparent 51%),
+      radial-gradient(1px 1px at 96% 13%, #ffe9a8 50%, transparent 51%),
+      radial-gradient(1px 1px at 2%  40%, #fff    50%, transparent 51%),
+      radial-gradient(1px 1px at 98% 50%, #fff    50%, transparent 51%),
+      radial-gradient(1px 1px at 7%  75%, #fff    50%, transparent 51%),
+      radial-gradient(1px 1px at 93% 80%, #ffe9a8 50%, transparent 51%);
+  }
+
+  /* рамка */
+  .border-outer { position:absolute; inset:20px; border:1px solid rgba(200,162,74,.55); pointer-events:none; z-index:5; }
+  .border-inner { position:absolute; inset:28px; border:1px solid rgba(200,162,74,.18); pointer-events:none; z-index:5; }
+  .corner { position:absolute; width:42px; height:42px; border:2px solid #c8a24a; z-index:6; }
+  .corner::before { content:""; position:absolute; width:16px; height:16px; border:1px solid #c8a24a; }
+  .co-tl { top:12px;  left:12px;  border-right:none; border-bottom:none; }
+  .co-tl::before { top:5px; left:5px; border-right:none; border-bottom:none; }
+  .co-tr { top:12px;  right:12px; border-left:none;  border-bottom:none; }
+  .co-tr::before { top:5px; right:5px; border-left:none; border-bottom:none; }
+  .co-bl { bottom:12px; left:12px; border-right:none; border-top:none; }
+  .co-bl::before { bottom:5px; left:5px; border-right:none; border-top:none; }
+  .co-br { bottom:12px; right:12px; border-left:none; border-top:none; }
+  .co-br::before { bottom:5px; right:5px; border-left:none; border-top:none; }
+
+  /* ===== LAYOUT ===== */
+  .layout {
+    position:absolute; inset:0; z-index:10;
+    display:flex;
+  }
+
+  /* ---- ЛЕВАЯ ПАНЕЛЬ (текст + цена) ---- */
+  .left {
+    width: 530px; flex-shrink:0;
+    padding: 44px 36px 40px 64px;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+
+  .top-label {
+    font-family:'Cinzel', serif;
+    font-size:11px; letter-spacing:.55em; color:#c8a24a; text-transform:uppercase;
+    display:flex; align-items:center; gap:14px;
+  }
+  .top-label::before {
+    content:""; display:inline-block; width:36px; height:1px;
+    background:linear-gradient(90deg, transparent, #c8a24a);
+  }
+
+  /* СИНЕРГИЯ+ одной строкой */
+  .title-line {
+    margin-top:10px; white-space:nowrap;
+  }
+  .title-main {
+    font-family:'Cormorant Garamond', serif;
+    font-size:82px; font-weight:600; line-height:.9;
+    background:linear-gradient(180deg, #fffbe6 0%, #f0d180 35%, #c8a24a 70%, #8a6420 100%);
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent;
+    letter-spacing:.025em; display:inline-block;
+  }
+  .title-plus {
+    font-family:'Cormorant Garamond', serif;
+    font-size:82px; font-weight:300;
+    -webkit-text-fill-color:#e3c068;
+    display:inline; margin-left:3px;
+  }
+
+  .subtitle-row {
+    margin-top:12px;
+    font-family:'Cinzel', serif;
+    font-size:11.5px; letter-spacing:.42em; text-transform:uppercase;
+    color:#d9c382;
+  }
+
+  .divider-line {
+    margin-top:14px; width:220px; height:1px;
+    background:linear-gradient(90deg, #c8a24a, rgba(200,162,74,.12));
+  }
+
+  .tagline {
+    margin-top:13px;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic; font-size:17px; color:#cdb986;
+    letter-spacing:.03em; line-height:1.45;
+  }
+
+  .when-block {
+    margin-top:18px;
+    display:flex; flex-direction:column; gap:7px;
+  }
+  .when-row {
+    display:flex; align-items:center; gap:11px;
+    font-size:14px; color:#e7d8a3;
+  }
+  .when-icon { color:#c8a24a; font-size:9px; flex-shrink:0; }
+  .when-val  { font-weight:600; color:#fff6d3; }
+  .when-sub  { color:#9a8860; font-size:12px; margin-left:3px; }
+
+  .price-box {
+    margin-top:20px;
+    display:inline-flex; align-items:center; gap:14px;
+    padding:11px 26px;
+    border:1px solid rgba(200,162,74,.5);
+    background:rgba(200,162,74,.07);
+    align-self:flex-start;
+  }
+  .price-lbl { font-family:'Cinzel', serif; font-size:10px; letter-spacing:.4em; color:#c8a24a; text-transform:uppercase; }
+  .price-val {
+    font-family:'Cormorant Garamond', serif; font-size:34px; font-weight:600;
+    background:linear-gradient(180deg, #fffbe6 0%, #c8a24a 100%);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+    display:inline-block;
+  }
+
+  .phone-row {
+    margin-top:14px;
+    font-family:'Cinzel', serif; font-size:10px; letter-spacing:.3em;
+    color:rgba(200,162,74,.6); text-transform:uppercase;
+    line-height:1.7;
+  }
+  .phone-val {
+    font-family:'Cormorant Garamond', serif; font-size:22px; font-weight:500;
+    color:#e3c068; letter-spacing:.05em; display:block; margin-top:2px;
+  }
+
+  /* вертикальный разделитель */
+  .v-line {
+    width:1px; height:780px; margin:auto 0;
+    flex-shrink:0; align-self:center;
+    background:linear-gradient(180deg, transparent, rgba(200,162,74,.35) 15%, rgba(200,162,74,.35) 85%, transparent);
+  }
+
+  /* ---- ПРАВАЯ ПАНЕЛЬ (два героя) ---- */
+  .right {
+    flex:1;
+    padding: 32px 32px 32px 32px;
+    display:flex; flex-direction:column; align-items:center; gap:16px; justify-content:center;
+  }
+
+  .heroes-row {
+    display:flex; gap:32px; align-items:flex-start; justify-content:center;
+  }
+
+  .guest-row {
+    width:100%; display:flex; flex-direction:column; align-items:center; gap:10px;
+    padding-top:14px;
+    border-top:1px solid rgba(200,162,74,.3);
+  }
+
+  .guest-tag {
+    font-family:'Cinzel', serif; font-size:8.5px; letter-spacing:.5em;
+    text-transform:uppercase; color:#c8a24a; text-align:center;
+    padding:3px 16px;
+    border:1px solid rgba(200,162,74,.4);
+    background:rgba(200,162,74,.06);
+  }
+
+  .guest-card {
+    display:flex; align-items:center; gap:22px; width:100%; justify-content:center;
+  }
+
+  .guest-arch-size {
+    width:150px !important; height:182px !important;
+    border-radius:75px 75px 8px 8px !important;
+    flex-shrink:0;
+  }
+  .guest-arch-size img {
+    object-position: top center !important;
+  }
+
+  .guest-text { text-align:left; }
+  .guest-text .hero-name { font-size:22px; }
+  .guest-text .hero-role { font-size:9px; }
+  .guest-text .hero-facts li { font-size:12px; }
+
+  .hero { width:220px; display:flex; flex-direction:column; align-items:center; }
+
+  .arch {
+    width:190px; height:230px;
+    border-radius:95px 95px 10px 10px;
+    position:relative; background:#140929; overflow:hidden;
+    box-shadow:
+      0 0 0 2px #c8a24a,
+      0 0 0 4px #07041a,
+      0 0 0 5px rgba(200,162,74,.35),
+      0 18px 55px rgba(0,0,0,.75);
+  }
+  .arch::before {
+    content:""; position:absolute; inset:0; z-index:2;
+    background:radial-gradient(ellipse at 50% 0%, rgba(255,220,140,.2), transparent 58%);
+  }
+  .arch::after {
+    content:""; position:absolute; inset:0; z-index:2;
+    background:linear-gradient(180deg, transparent 58%, rgba(7,4,26,.5) 100%);
+  }
+  .arch img { width:100%; height:100%; object-fit:cover; display:block; filter:contrast(1.05) saturate(.9) brightness(.97); }
+
+  .hero-name {
+    margin-top:13px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:24px; font-weight:600; color:#fff6d3;
+    letter-spacing:.04em; line-height:1.1; text-align:center;
+  }
+  .hero-role {
+    margin-top:6px;
+    font-family:'Cinzel', serif; font-size:9px; font-weight:500;
+    letter-spacing:.38em; text-transform:uppercase; color:#c8a24a;
+    line-height:1.6; text-align:center;
+  }
+  .hero-facts {
+    margin-top:11px; list-style:none; padding:0; width:100%;
+    display:flex; flex-direction:column; gap:4px;
+  }
+  .hero-facts li {
+    font-size:12.5px; color:#e7d8a3; font-weight:300; line-height:1.4;
+    padding-left:16px; position:relative;
+  }
+  .hero-facts li::before {
+    content:"◆"; position:absolute; left:0; top:2px;
+    color:#c8a24a; font-size:7px;
+  }
+  .hero-facts b { color:#fff6d3; font-weight:500; }
+
+  /* СПЕЦИАЛЬНЫЙ ГОСТЬ */
+  .guest-bar {
+    width:100%; padding:14px 0 0;
+    border-top:1px solid rgba(200,162,74,.35);
+  }
+  .guest-label {
+    font-family:'Cinzel', serif; font-size:9px; letter-spacing:.5em;
+    text-transform:uppercase; color:#c8a24a; text-align:center;
+    margin-bottom:12px;
+  }
+  .guest-inner {
+    display:flex; align-items:center; gap:20px; justify-content:center;
+  }
+  .guest-arch {
+    width:90px; height:108px; flex-shrink:0;
+    border-radius:45px 45px 8px 8px;
+    overflow:hidden;
+    box-shadow:0 0 0 2px #c8a24a, 0 0 0 4px #07041a, 0 0 0 5px rgba(200,162,74,.3);
+    background:#140929;
+  }
+  .guest-arch img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+  .guest-info { text-align:left; }
+  .guest-name {
+    font-family:'Cormorant Garamond', serif;
+    font-size:24px; font-weight:600; color:#fff6d3; letter-spacing:.04em;
+  }
+  .guest-role {
+    margin-top:5px;
+    font-family:'Manrope', sans-serif;
+    font-size:11.5px; font-weight:300; color:#c8a24a; line-height:1.6;
+  }
+
+  /* СЛОГАН */
+  .slogan-bottom {
+    text-align:center; padding-top:10px;
+    border-top:1px solid rgba(200,162,74,.2); width:100%;
+  }
+  .slogan-main {
+    font-family:'Cormorant Garamond', serif;
+    font-size:20px; font-weight:600; color:#f0d180; letter-spacing:.04em;
+  }
+  .slogan-sub {
+    margin-top:3px;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic; font-size:14px; color:#cdb986;
+  }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="grain"></div>
+  <div class="stars"></div>
+  <div class="border-outer"></div>
+  <div class="border-inner"></div>
+  <div class="corner co-tl"></div>
+  <div class="corner co-tr"></div>
+  <div class="corner co-bl"></div>
+  <div class="corner co-br"></div>
+
+  <div class="layout">
+
+    <!-- ===== ЛЕВАЯ КОЛОНКА ===== -->
+    <div class="left">
+      <div>
+        <div class="top-label">Москва · Вечер тайн · 2026</div>
+
+        <div class="title-line">
+          <span class="title-main">СИНЕРГИЯ</span><span class="title-plus">+</span>
+        </div>
+
+        <div class="subtitle-row">Астрология · Экстрасенсорика · Судьба</div>
+
+        <div class="divider-line"></div>
+
+        <div class="tagline">«Точнейший планетарный анализ<br>и непревзойдённый дар видения»</div>
+
+        <div class="when-block">
+          <div class="when-row">
+            <span class="when-icon">◆</span>
+            <span><span class="when-val">16 июня 2026</span><span class="when-sub"> · вторник</span></span>
+          </div>
+          <div class="when-row">
+            <span class="when-icon">◆</span>
+            <span><span class="when-val">18:00 — 21:00</span></span>
+          </div>
+          <div class="when-row">
+            <span class="when-icon">◆</span>
+            <span><span class="when-val">Клуб «Высоцкий»</span><span class="when-sub"> · Москва, ул. Высоцкого, д. 3</span></span>
+          </div>
+        </div>
+
+        <div class="price-box">
+          <span class="price-lbl">Билет</span>
+          <span class="price-val">5 000 ₽</span>
+        </div>
+      </div>
+
+      <div class="phone-row">
+        Вопросы по приобретению билетов
+        <span class="phone-val">+7 965 415-79-54</span>
+      </div>
+    </div>
+
+    <!-- вертикальный разделитель -->
+    <div class="v-line"></div>
+
+    <!-- ===== ПРАВАЯ КОЛОНКА ===== -->
+    <div class="right">
+      <div class="heroes-row">
+
+        <!-- Михаил -->
+        <div class="hero">
+          <div class="arch">
+            <img src="img/almazov.jpg" alt="Михаил Алмазов"
+                 onerror="this.style.display='none'; this.parentNode.style.background='#1a0f30';">
+          </div>
+          <div class="hero-name">Михаил Алмазов</div>
+          <div class="hero-role">Ясновидящий · Медиум · Хиромант</div>
+          <ul class="hero-facts">
+            <li><b>Личный медиум В.В. Жириновского</b></li>
+            <li>Ученик легендарной <b>Джуны</b></li>
+            <li>Ясновидящий и корректор судьбы</li>
+            <li>Работает с бизнесменами и политиками</li>
+          </ul>
+        </div>
+
+        <!-- Максим -->
+        <div class="hero">
+          <div class="arch">
+            <img src="img/lukyanenkov.jpg" alt="Максим Лукьяненков"
+                 onerror="this.style.display='none'; this.parentNode.style.background='#1a0f30';">
+          </div>
+          <div class="hero-name">Максим Лукьяненков</div>
+          <div class="hero-role">Астролог · Нумеролог · Ведущий вечера</div>
+          <ul class="hero-facts">
+            <li><b>10 лет успешной практики</b></li>
+            <li>Клиенты по всему миру</li>
+            <li>Западная, восточная и славяноарийская астрология</li>
+            <li>Нумерология и китайская метафизика стихий</li>
+            <li>Делает <b>точнейшие прогнозы до часа</b></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- ГАМЗАТ — горизонтальный блок: фото слева, текст справа -->
+      <div class="guest-row">
+        <div class="guest-tag">◆ &nbsp;Специальный гость · Резидент клуба&nbsp; ◆</div>
+        <div class="guest-card">
+          <div class="arch guest-arch-size">
+            <img src="img/gamzat.jpg" alt="Гамзат Гамзаев"
+                 onerror="this.style.display='none'; this.parentNode.style.background='#1a0f30';">
+          </div>
+          <div class="guest-text">
+            <div class="hero-name">Гамзат Гамзаев</div>
+            <div class="hero-role">Президент Федерации MMA</div>
+            <ul class="hero-facts">
+              <li>Дипломированный <b>цифровой психолог</b></li>
+              <li><b>Мастер науки Сюцай</b></li>
+              <li>Резидент клуба Синергия+</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
