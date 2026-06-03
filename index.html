@@ -566,6 +566,30 @@
   .master-card.blue .master-role { color: #8aaed4; }
   .master-card.blue .master-bio li::before { color: #8aaed4; }
   .master-card.blue { border-top: 3px solid rgba(60,100,180,.5); }
+  .master-card.gold { border-top: 3px solid rgba(200,162,74,.6); }
+  .master-card.gold .master-badge { color: var(--gold); border-color: rgba(200,162,74,.35); }
+  .master-card.gold .master-role { color: var(--gold); }
+  .master-card.gold .master-bio li::before { color: var(--gold); }
+  .guest-row {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .guest-row .master-card {
+    max-width: 520px;
+    width: 100%;
+  }
+  .guest-label {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 0;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    opacity: 0.7;
+    text-transform: uppercase;
+  }
 
   /* ============================================================
      PROGRAM (ПРОГРАММА ВЕЧЕРА)
@@ -1330,6 +1354,38 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ПРИГЛАШЁННЫЕ ГОСТИ
+============================================================ -->
+<section class="masters" id="guests" style="padding-top: 80px; padding-bottom: 100px;">
+  <div class="masters-inner">
+    <div class="section-label">специальные гости</div>
+    <h2 class="section-title gold-text">Приглашённые гости</h2>
+    <div class="guest-row">
+      <!-- ГАМЗАТ ГАМЗАЕВ -->
+      <div class="master-card gold">
+        <div class="master-photo-wrap">
+          <img class="master-photo"
+               src="img/gamzat.jpg"
+               alt="Гамзат Гамзаев — Президент Федерации MMA"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="master-photo-placeholder" style="display:none">Г</div>
+        </div>
+        <div class="master-body">
+          <div class="master-badge">Сила · Разум · Гармония</div>
+          <div class="master-name">Гамзат<br>Гамзаев</div>
+          <div class="master-role">приглашённый гость</div>
+          <ul class="master-bio">
+            <li><b>Президент Федерации MMA</b></li>
+            <li>Цифровой психолог</li>
+            <li>Мастер науки <b>Сюцай</b></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
