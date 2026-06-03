@@ -784,6 +784,18 @@
   }
   .guarantee-item::before { content: "◆"; color: var(--gold); font-size: 9px; }
 
+  /* TicketsCloud виджет */
+  .tc-widget-wrap {
+    margin-top: 60px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(200,162,74,.15);
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   /* ============================================================
      ORGANIZERS
   ============================================================ */
@@ -1433,7 +1445,7 @@
           <li>Участие в групповой сессии вопросов</li>
           <li>Именной QR-билет на e-mail</li>
         </ul>
-        <a href="https://timepad.ru/event/XXXXXXX/" target="_blank" rel="noopener" class="tariff-btn outline-btn">
+        <a href="https://ticketscloud.com/v1/widgets/?token=b2ddd86398544a83b6dbfb839ae91dac&event=6a1f58ff8bf910c5d7a5b2d3&lang=ru" target="_blank" rel="noopener" class="tariff-btn outline-btn">
           Купить билет
         </a>
       </div>
@@ -1452,7 +1464,7 @@
           <li>Именной QR-билет на e-mail</li>
           <li>Нетворкинг с мастерами после вечера</li>
         </ul>
-        <a href="https://timepad.ru/event/XXXXXXX/" target="_blank" rel="noopener" class="tariff-btn gold-btn">
+        <a href="https://ticketscloud.com/v1/widgets/?token=b2ddd86398544a83b6dbfb839ae91dac&event=6a1f58ff8bf910c5d7a5b2d3&lang=ru" target="_blank" rel="noopener" class="tariff-btn gold-btn">
           Купить VIP
         </a>
       </div>
@@ -1471,7 +1483,7 @@
           <li><b>20 минут личной работы</b> с мастером после вечера</li>
           <li>Нетворкинг · именной QR-билет</li>
         </ul>
-        <a href="https://timepad.ru/event/XXXXXXX/" target="_blank" rel="noopener" class="tariff-btn outline-btn">
+        <a href="https://ticketscloud.com/v1/widgets/?token=b2ddd86398544a83b6dbfb839ae91dac&event=6a1f58ff8bf910c5d7a5b2d3&lang=ru" target="_blank" rel="noopener" class="tariff-btn outline-btn">
           Купить доступ
         </a>
       </div>
@@ -1481,8 +1493,23 @@
     <div class="tickets-guarantee">
       <div class="guarantee-item">Именной QR-билет на e-mail сразу после оплаты</div>
       <div class="guarantee-item">Оплата картой, СБП, онлайн-банком</div>
-      <div class="guarantee-item">Безопасный приём платежей через TimePad</div>
+      <div class="guarantee-item">Безопасный приём платежей через TicketsCloud</div>
       <div class="guarantee-item">Возврат за 72 часа до события</div>
+    </div>
+
+    <!-- TicketsCloud виджет — встроенная форма покупки -->
+    <div class="tc-widget-wrap">
+      <iframe
+        id="tc-widget-frame"
+        src="https://ticketscloud.com/v1/widgets/?token=b2ddd86398544a83b6dbfb839ae91dac&event=6a1f58ff8bf910c5d7a5b2d3&lang=ru"
+        frameborder="0"
+        allowtransparency="true"
+        scrolling="no"
+        width="100%"
+        height="600"
+        style="border:none; border-radius:12px; overflow:hidden;"
+        title="Купить билеты на Синергия+"
+      ></iframe>
     </div>
   </div>
 </section>
@@ -1648,7 +1675,7 @@
       <div class="footer-event-meta">открытие клуба «Синергия+»</div>
       <p class="footer-event-place">Москва · клуб «Высоцкий»<br>Михаил Алмазов · Максим Лукьяненков</p>
       <div class="footer-btn-wrap">
-        <a href="https://timepad.ru/event/XXXXXXX/" target="_blank" rel="noopener" class="btn-primary">
+        <a href="https://ticketscloud.com/v1/widgets/?token=b2ddd86398544a83b6dbfb839ae91dac&event=6a1f58ff8bf910c5d7a5b2d3&lang=ru" target="_blank" rel="noopener" class="btn-primary">
           Купить билет
         </a>
       </div>
@@ -1658,7 +1685,7 @@
     <div class="footer-contacts">
       <div>
         <div class="fc-item-label">Телефон</div>
-        <a href="tel:+7XXXXXXXXXX" class="fc-item-value">+7 (XXX) XXX-XX-XX</a>
+        <a href="tel:+79226251655" class="fc-item-value">+7 (922) 625-15-55</a>
         <div class="fc-item-note">Звонки и WhatsApp</div>
       </div>
       <div>
