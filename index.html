@@ -682,7 +682,8 @@
 
   .tariffs {
     margin-top: 72px;
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+    display: grid; grid-template-columns: minmax(auto, 480px); gap: 28px;
+    justify-content: center;
   }
   .tariff {
     position: relative;
@@ -1418,7 +1419,7 @@
 <section class="tickets" id="tickets">
   <div class="tickets-inner">
     <div class="section-label">билеты</div>
-    <h2 class="section-title gold-text">Выберите свой уровень</h2>
+    <h2 class="section-title gold-text">Билет на вечер</h2>
     <p class="tickets-note">
       Всего 100 мест. После оплаты вы получите именной QR-билет на e-mail — прямо в момент покупки.
     </p>
@@ -1450,43 +1451,6 @@
         </a>
       </div>
 
-      <!-- Тариф 2 — VIP (популярный) -->
-      <div class="tariff featured">
-        <div class="tariff-name">VIP</div>
-        <div class="tariff-price">
-          <span class="currency">₽</span>8 000
-        </div>
-        <div class="tariff-divider"></div>
-        <ul class="tariff-features">
-          <li><b>Место в первых рядах</b></li>
-          <li>Весь вечер с двумя мастерами</li>
-          <li><b>Приоритетная очередь</b> на вопрос в зале</li>
-          <li>Именной QR-билет на e-mail</li>
-          <li>Нетворкинг с мастерами после вечера</li>
-        </ul>
-        <a href="https://ticketscloud.com/v1/widgets/?token=b2ddd86398544a83b6dbfb839ae91dac&event=6a1f58ff8bf910c5d7a5b2d3&lang=ru" target="_blank" rel="noopener" class="tariff-btn gold-btn">
-          Купить VIP
-        </a>
-      </div>
-
-      <!-- Тариф 3 — Личная встреча -->
-      <div class="tariff">
-        <div class="tariff-name">Личная встреча</div>
-        <div class="tariff-price">
-          <span class="currency">₽</span>15 000
-        </div>
-        <div class="tariff-divider"></div>
-        <ul class="tariff-features">
-          <li><b>VIP-место</b> в первом ряду</li>
-          <li>Весь вечер с двумя мастерами</li>
-          <li>Приоритетный вопрос в зале</li>
-          <li><b>20 минут личной работы</b> с мастером после вечера</li>
-          <li>Нетворкинг · именной QR-билет</li>
-        </ul>
-        <a href="https://ticketscloud.com/v1/widgets/?token=b2ddd86398544a83b6dbfb839ae91dac&event=6a1f58ff8bf910c5d7a5b2d3&lang=ru" target="_blank" rel="noopener" class="tariff-btn outline-btn">
-          Купить доступ
-        </a>
-      </div>
 
     </div>
 
