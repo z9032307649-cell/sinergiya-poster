@@ -785,17 +785,6 @@
   }
   .guarantee-item::before { content: "◆"; color: var(--gold); font-size: 9px; }
 
-  /* TicketsCloud виджет */
-  .tc-widget-wrap {
-    margin-top: 60px;
-    border-radius: 16px;
-    overflow: hidden;
-    background: rgba(255,255,255,.03);
-    border: 1px solid rgba(200,162,74,.15);
-    max-width: 860px;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
   /* ============================================================
      ORGANIZERS
@@ -1459,21 +1448,6 @@
       <div class="guarantee-item">Оплата картой, СБП, онлайн-банком</div>
       <div class="guarantee-item">Безопасный приём платежей через TicketsCloud</div>
       <div class="guarantee-item">Возврат за 72 часа до события</div>
-    </div>
-
-    <!-- TicketsCloud виджет — встроенная форма покупки -->
-    <div class="tc-widget-wrap">
-      <iframe
-        id="tc-widget-frame"
-        src="https://ticketscloud.com/v1/widgets/?token=b2ddd86398544a83b6dbfb839ae91dac&event=6a1f58ff8bf910c5d7a5b2d3&lang=ru"
-        frameborder="0"
-        allowtransparency="true"
-        scrolling="no"
-        width="100%"
-        height="600"
-        style="border:none; border-radius:12px; overflow:hidden;"
-        title="Купить билеты на Синергия+"
-      ></iframe>
     </div>
   </div>
 </section>
