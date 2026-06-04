@@ -317,45 +317,34 @@
   .when-where {
     text-align:left;
   }
-  .when-where .date-line {
-    font-family:'Cormorant Garamond', serif;
-    font-size:54px; font-weight:600; line-height:1.05;
-    background:linear-gradient(180deg, #fffbe6 0%, #e3c068 60%, #a37927 100%);
-    -webkit-background-clip:text; background-clip:text;
-    -webkit-text-fill-color:transparent;
-    letter-spacing:.02em;
-    font-variant-numeric: lining-nums;
-    font-feature-settings: "lnum" 1, "tnum" 1;
-  }
-  .when-where .date-time {
-    margin-top:6px;
-    font-family:'Cormorant Garamond', serif;
-    font-size:54px; font-weight:600; line-height:1.05;
-    color:#fff6d3;
-    letter-spacing:.02em;
-    font-variant-numeric: lining-nums;
-    font-feature-settings: "lnum" 1, "tnum" 1;
-  }
   .when-where .place {
-    margin-top:22px;
-    max-width:440px;
+    max-width:560px;
   }
   .when-where .place-label {
     font-family:'Cinzel', serif;
     font-size:11px; letter-spacing:.5em;
     text-transform:uppercase;
     color:#c8a24a;
-    margin-bottom:8px;
+    margin-bottom:10px;
   }
   .when-where .place-name {
     font-family:'Cormorant Garamond', serif;
-    font-size:26px; font-weight:600;
+    font-size:44px; font-weight:600;
     color:#fff6d3;
     line-height:1.1;
   }
+  .when-where .place-datetime {
+    margin-top:10px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:30px; font-weight:600; line-height:1.2;
+    background:linear-gradient(180deg, #fffbe6 0%, #e3c068 60%, #a37927 100%);
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent;
+    letter-spacing:.04em;
+  }
   .when-where .place-addr {
-    margin-top:6px;
-    font-size:17px;
+    margin-top:8px;
+    font-size:18px;
     color:#cdb986;
     font-weight:300;
   }
@@ -557,11 +546,10 @@
 
     <div class="footer">
       <div class="when-where">
-        <div class="date-line">16 июня</div>
-        <div class="date-time">18:00</div>
         <div class="place">
           <div class="place-label">место проведения</div>
           <div class="place-name">Клуб «Высоцкий»</div>
+          <div class="place-datetime">16 июня · 18:00</div>
           <div class="place-addr">Москва, ул. Высоцкого, д.&nbsp;3</div>
         </div>
       </div>
