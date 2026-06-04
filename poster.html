@@ -360,30 +360,80 @@
     font-weight:300;
   }
 
-  .phone-wrap {
-    display:flex; flex-direction:column; align-items:flex-end;
-    gap:10px; text-align:right;
+  /* приглашённый гость — горизонтальная полоса */
+  .guest-strip {
+    position:absolute; left:90px; right:90px; top:1405px;
+    display:flex; align-items:center; gap:36px;
+    padding:22px 40px;
+    border:1px solid rgba(200,162,74,.3);
+    border-radius:4px;
+    background:rgba(255,220,140,.04);
   }
-  .phone-label {
+  .guest-avatar {
+    width:110px; height:110px; flex-shrink:0;
+    border-radius:50%;
+    overflow:hidden;
+    border:2px solid #c8a24a;
+    box-shadow:0 0 0 3px rgba(200,162,74,.25);
+  }
+  .guest-avatar img { width:100%; height:100%; object-fit:cover; object-position:top; }
+  .guest-label {
     font-family:'Cinzel', serif;
     font-size:11px; letter-spacing:.5em;
     text-transform:uppercase;
     color:#c8a24a;
-    margin-bottom:4px;
+    margin-bottom:8px;
   }
-  .phone-number {
+  .guest-name {
     font-family:'Cormorant Garamond', serif;
-    font-size:52px; font-weight:600; line-height:1;
-    background:linear-gradient(180deg, #fffbe6 0%, #e3c068 60%, #a37927 100%);
-    -webkit-background-clip:text; background-clip:text;
-    -webkit-text-fill-color:transparent;
+    font-size:32px; font-weight:600; line-height:1.1;
+    color:#fff6d3;
     letter-spacing:.04em;
-    white-space:nowrap;
   }
-  .phone-sub {
+  .guest-role {
+    margin-top:6px;
+    font-family:'Cinzel', serif;
+    font-size:11px; letter-spacing:.35em;
+    text-transform:uppercase;
+    color:#c8a24a;
+    line-height:1.6;
+  }
+  .guest-divider {
+    width:1px; height:80px; flex-shrink:0;
+    background:linear-gradient(180deg, transparent, rgba(200,162,74,.4), transparent);
+    margin:0 10px;
+  }
+  .guest-bio {
+    font-size:16px; line-height:1.55; font-weight:300;
+    color:#e7d8a3;
+    list-style:none;
+  }
+  .guest-bio li { padding-left:20px; position:relative; margin-bottom:3px; }
+  .guest-bio li::before { content:"◆"; position:absolute; left:0; top:2px; color:#c8a24a; font-size:10px; }
+  .guest-bio b { color:#fff6d3; font-weight:500; }
+
+  /* QR-код */
+  .qr-wrap {
+    display:flex; flex-direction:column; align-items:flex-end;
+    gap:10px; text-align:right;
+  }
+  .qr-label {
+    font-family:'Cinzel', serif;
+    font-size:11px; letter-spacing:.5em;
+    text-transform:uppercase;
+    color:#c8a24a;
+    margin-bottom:6px;
+  }
+  .qr-img {
+    width:160px; height:160px;
+    border:3px solid #c8a24a;
+    border-radius:4px;
+    background:#fff;
+    padding:6px;
+  }
+  .qr-site {
     font-family:'Cormorant Garamond', serif;
-    font-style:italic;
-    font-size:20px;
+    font-size:18px; font-style:italic;
     color:#cdb986;
     letter-spacing:.06em;
     margin-top:6px;
@@ -476,6 +526,25 @@
       <div class="slogan-sub">Результат — не&nbsp;заставит себя ждать.</div>
     </div>
 
+    <!-- ПРИГЛАШЁННЫЙ ГОСТЬ -->
+    <div class="guest-strip">
+      <div class="guest-avatar">
+        <img src="img/gamzat.jpg" alt="Гамзат Гамзаев"
+             onerror="this.style.display='none'">
+      </div>
+      <div>
+        <div class="guest-label">приглашённый гость</div>
+        <div class="guest-name">Гамзат Гамзаев</div>
+        <div class="guest-role">вице-президент · резидент клуба</div>
+      </div>
+      <div class="guest-divider"></div>
+      <ul class="guest-bio">
+        <li>Президент <b>Федерации MMA</b></li>
+        <li>Цифровой психолог</li>
+        <li>Мастер науки <b>Сюцай</b></li>
+      </ul>
+    </div>
+
     <div class="footer">
       <div class="when-where">
         <div class="date-line">16 июня</div>
@@ -487,10 +556,12 @@
         </div>
       </div>
 
-      <div class="phone-wrap">
-        <div class="phone-label">запись и билеты</div>
-        <div class="phone-number">+7 922 625-16-55</div>
-        <div class="phone-sub">звонок или WhatsApp</div>
+      <div class="qr-wrap">
+        <div class="qr-label">билеты онлайн</div>
+        <img class="qr-img"
+             src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://sinergiyaplus.ru&color=000000&bgcolor=ffffff"
+             alt="QR sinergiyaplus.ru">
+        <div class="qr-site">sinergiyaplus.ru</div>
       </div>
     </div>
   </div>
