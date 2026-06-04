@@ -1761,5 +1761,33 @@ window.addEventListener('scroll', function() {
 </script>
 
 <script src="https://ticketscloud.com/static/scripts/widget/tcwidget.js"></script>
+
+<!-- TicketsCloud widget overrides our button styles — restore gold after load -->
+<style>
+  .nav-cta,
+  .nav-cta:link,
+  .nav-cta:visited {
+    background: linear-gradient(180deg, #fffbe6 0%, #e3c068 50%, #a37927 100%) !important;
+    color: var(--bg-deep) !important;
+    border: none !important;
+    box-shadow: 0 4px 20px rgba(200,162,74,.25) !important;
+  }
+  .btn-primary,
+  .btn-primary:link,
+  .btn-primary:visited {
+    background: linear-gradient(180deg, #fffbe6 0%, #e3c068 50%, #a37927 100%) !important;
+    color: #050310 !important;
+    border: none !important;
+  }
+  .tariff-btn.outline-btn {
+    background: transparent !important;
+    color: var(--gold-light) !important;
+    border: 1px solid var(--gold) !important;
+  }
+  /* нейтрализуем любые inline-стили что виджет вешает */
+  [data-tc-event] {
+    background-color: unset !important;
+  }
+</style>
 </body>
 </html>
